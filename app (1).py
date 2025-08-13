@@ -67,7 +67,8 @@ params = {
     "verbosity": -1
 }
 
-model = lgb.train(params, train_data, valid_sets=[test_data], num_boost_round=50, verbose_eval=False)
+model = lgb.train(params, train_data, valid_sets=[test_data], num_boost_round=50)
+
 y_pred = model.predict(X_test)
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
